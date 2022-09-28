@@ -4,7 +4,7 @@ export const Box = styled.div`
     box-sizing: border-box;
     height: 100vh;
     padding-top: 20px;
-    margin: 0px;
+    margin: 100px 0px;
     flex-direction: row;
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,4 +26,10 @@ export const Text = styled.p`
     width: 100%;
     margin-top: 50px;
     color: #167fafcf;
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content:center;
+    align-items: center;
 `;

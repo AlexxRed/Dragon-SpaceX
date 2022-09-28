@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
-import NoteAltIcon from '@mui/icons-material/NoteAlt';
-import ArchiveIcon from '@mui/icons-material/Archive';
-import AnalyticsIcon from '@mui/icons-material/Analytics';
+import SatelliteAltIcon from '@mui/icons-material/SatelliteAlt';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
+import RocketIcon from '@mui/icons-material/Rocket';
 
-export const Logo = styled(NoteAltIcon)`
+export const Logo = styled(SatelliteAltIcon)`
     display: block;
     text-align: center;
     padding: 6px;
@@ -18,7 +18,7 @@ export const Logo = styled(NoteAltIcon)`
         }
 `;
 
-export const ArchiveLogo = styled(ArchiveIcon)`
+export const ArchiveLogo = styled(RocketLaunchIcon)`
     display: block;
     text-align: center;
     padding: 6px;
@@ -32,7 +32,7 @@ export const ArchiveLogo = styled(ArchiveIcon)`
         }
 `;
 
-export const StatisticLogo = styled(AnalyticsIcon)`
+export const StatisticLogo = styled(RocketIcon)`
     display: block;
     text-align: center;
     padding: 6px;

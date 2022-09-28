@@ -11,6 +11,7 @@ export function AppBar() {
                 <Box>
                     <NavLink to={refs.home}><Logo></Logo></NavLink>
                 </Box>
+                <Box><h1>Dragons</h1></Box>
                 <Box>
                     <Link to={refs.archive}><ArchiveLogo></ArchiveLogo></Link>
                     <Link to={refs.staistic}><StatisticLogo></StatisticLogo></Link>
