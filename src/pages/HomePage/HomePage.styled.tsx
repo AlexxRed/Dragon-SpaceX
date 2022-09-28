@@ -12,7 +12,7 @@ export const Box = styled.div`
 
 `;
 
-export const Text = styled.h4`
+export const Text = styled.p`
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -25,5 +25,5 @@ export const Text = styled.h4`
     align-items: center;
     width: 100%;
     margin-top: 50px;
-    color: #23252385;
+    color: #167fafcf;
 `;

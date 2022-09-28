@@ -54,11 +54,6 @@ export const dragonsReducer = persistReducer(
     dragonsSlice.reducer
 );
 
-// export const {
-//     fetchAllDragons,
-//     getOneDragon
-// } = dragonsSlice.actions;
-
 interface IState {
     items: any;
     activeDragon: any;

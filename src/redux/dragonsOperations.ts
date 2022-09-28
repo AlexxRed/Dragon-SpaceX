@@ -6,7 +6,7 @@ export const fetchAllDragons = createAsyncThunk<any, void, {}>(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get(`https://api.spacexdata.com/v4/dragons`)
-            console.log(response);
+            // console.log(response);
             return response.data
 
         } catch (error) {
