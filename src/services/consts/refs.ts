@@ -1,7 +1,7 @@
 export const refs = {
     layout: '/',
     home: '/',
-    archive: 'archive',
+    dragons: 'dragons',
     staistic: 'staistic',
     createNote: 'create',
     editNote: 'edit',

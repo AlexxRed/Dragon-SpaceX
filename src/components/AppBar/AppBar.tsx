@@ -13,7 +13,7 @@ export function AppBar() {
                 </Box>
                 <Box><h1>Dragons</h1></Box>
                 <Box>
-                    <Link to={refs.archive}><ArchiveLogo></ArchiveLogo></Link>
+                    <Link to={refs.dragons}><ArchiveLogo></ArchiveLogo></Link>
                     <Link to={refs.staistic}><StatisticLogo></StatisticLogo></Link>
                 </Box>
             </Navigation>
