@@ -24,7 +24,7 @@ export const dragonsSlice = createSlice({
         },
         setGallery(state: IState) {
             state.items.forEach(
-                ({ flickr_images }: { flickr_images: [] }) => flickr_images.map((item: any ) => state.gallery.push(item)))
+                ({ flickr_images }: { flickr_images: [] }) => flickr_images.map((item: string ) => state.gallery.push(item)))
         }
     },
     extraReducers: {
@@ -71,7 +71,7 @@ interface IState {
     activeDragon: any|undefined|null;
     isLoading: any;
     error: any;
-    gallery: any| [string]|undefined;
+    gallery: any | [string];
 }
 
 export const { setGallery } = dragonsSlice.actions;
