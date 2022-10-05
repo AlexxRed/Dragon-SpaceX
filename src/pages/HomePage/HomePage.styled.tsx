@@ -25,7 +25,14 @@ export const Text = styled.p`
     align-items: center;
     width: 100%;
     margin-top: 50px;
-    color: #167fafcf;
+    color: #1f9edacf;
+    
+`;
+
+export const Shadow = styled.div`
+    max-width: fit-content;
+    margin: 0px auto;
+    background-color: transparent;
 `;
 
 export const Wrapper = styled.div`

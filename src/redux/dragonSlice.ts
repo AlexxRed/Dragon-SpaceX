@@ -6,7 +6,8 @@ import { fetchAllDragons, getOneDragon} from './dragonsOperations'
 
 const initialState = {
     items: [],
-    activeDragon: '',
+    activeDragon: undefined,
+    gallery: [],
     isLoading: true,
     error: null,
 };
@@ -14,7 +15,18 @@ const initialState = {
 export const dragonsSlice = createSlice({
     name: 'dragons',
     initialState,
-    reducers: {},
+    reducers: {
+        firstActiveDragon(state: IState, action){
+            state.activeDragon = action.payload
+        },
+        setActiveDragon(state: IState, action) {
+            state.activeDragon = state.items.find((item: any) => item.id === action.payload);
+        },
+        setGallery(state: IState) {
+            state.items.forEach(
+                ({ flickr_images }: { flickr_images: [] }) => flickr_images.map((item: any ) => state.gallery.push(item)))
+        }
+    },
     extraReducers: {
         [fetchAllDragons.fulfilled.type]: (state: IState, action: any) => {
             state.items = action.payload;
@@ -56,13 +68,18 @@ export const dragonsReducer = persistReducer(
 
 interface IState {
     items: any;
-    activeDragon: any;
+    activeDragon: any|undefined|null;
     isLoading: any;
     error: any;
+    gallery: any| [string]|undefined;
 }
 
+export const { setGallery } = dragonsSlice.actions;
+export const { setActiveDragon } = dragonsSlice.actions;
+
+export const getGallery = ({dragons}:{dragons: IState}) => dragons.gallery;
 export const getDragons = ({dragons}:{dragons: IState}) => dragons.items;
-export const getDragon = ({dragons}:{dragons: IState}) => dragons.activeDragon;
+export const getActiveDragon = ({dragons}:{dragons: IState}) => dragons.activeDragon;
 export const getLoading = ({dragons}:{dragons: IState}) => dragons.isLoading;
 export const getError = ({dragons}:{dragons: IState}) => dragons.error;
 

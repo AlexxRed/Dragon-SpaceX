@@ -1,4 +1,4 @@
-import { Header, Navigation, Box, Logo, ArchiveLogo, StatisticLogo } from './AppBar.styled';//Logo,LogoIcon 
+import { Header, Navigation, Box, Logo, ArchiveLogo, StatisticLogo, LogoText } from './AppBar.styled';//Logo,LogoIcon 
 import { Link, NavLink } from 'react-router-dom';
 import { refs } from "../../services/consts/refs";
 
@@ -9,11 +9,11 @@ export function AppBar() {
         <Header>
             <Navigation>
                 <Box>
-                    <NavLink to={refs.home}><Logo></Logo></NavLink>
+                    <NavLink to={refs.home}><Logo></Logo><LogoText>Dragon</LogoText></NavLink>
                 </Box>
                 <Box><h1>Dragons</h1></Box>
                 <Box>
-                    <Link to={refs.dragons}><ArchiveLogo></ArchiveLogo></Link>
+                    <Link to={refs.dragons}><ArchiveLogo></ArchiveLogo><LogoText>All Dragons</LogoText></Link>
                     <Link to={refs.staistic}><StatisticLogo></StatisticLogo></Link>
                 </Box>
             </Navigation>

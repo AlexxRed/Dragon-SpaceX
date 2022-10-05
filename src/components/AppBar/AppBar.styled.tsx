@@ -9,8 +9,8 @@ export const Logo = styled(SatelliteAltIcon)`
     text-align: center;
     padding: 6px;
     overflow: hidden;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     fill: #b9c5b8;
     &:hover,
     &:focus {
@@ -23,8 +23,8 @@ export const ArchiveLogo = styled(RocketLaunchIcon)`
     text-align: center;
     padding: 6px;
     overflow: hidden;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     fill: #b9c5b8;
     &:hover,
     &:focus {
@@ -37,8 +37,8 @@ export const StatisticLogo = styled(RocketIcon)`
     text-align: center;
     padding: 6px;
     overflow: hidden;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 50px;
     fill: #b9c5b8;
     &:hover,
     &:focus {
@@ -97,18 +97,13 @@ export const Box = styled.div`
 `;
 
 
-export const BasketText = styled.p`
-    position: absolute;
-    top: 0;
-    right: 0;
+export const LogoText = styled.p`
     display:flex;
     align-items: center;
     justify-content:center;
     text-align:center;
-    border-radius: 50%;
-    background-color: #fff;
-    color: #33a02ff0;
-    padding:5px;
+    color: #fff;
+    padding-left:30px;
     width: 6px;
     height:6px;
 `;

@@ -25,11 +25,25 @@ export const Text = styled.p`
     align-items: center;
     width: 100%;
     margin-top: 50px;
-    color: #167fafcf;
+    color: #1f9edacf;
 `;
 
 export const Wrapper = styled.div`
     display: flex;
     justify-content:center;
     align-items: center;
+`;
+
+export const DragonList = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`;
+
+export const ImageWrapper = styled.div`
+    margin-left: 20px;
+    cursor: pointer;
+        :hover{ 
+        transform: scale(109%)
+        }
 `;
