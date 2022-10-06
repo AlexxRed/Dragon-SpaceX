@@ -1,8 +1,8 @@
 export interface IUser {
   token?: string;
-  login?: string;
   _id?: number;
-  username?: string;
+  name?: string;
   email?: string;
   password: string;
+  repeat_password?: string;
 }

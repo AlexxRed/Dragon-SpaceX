@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { IUser } from "../../services/types/user.types";
 
 axios.defaults.baseURL = 'https://delivery-backend-project.herokuapp.com/api';
 
@@ -17,7 +18,7 @@ const register = createAsyncThunk<any, void, {}>(
     async credentials => {
     try {
         const response = await axios.post('/auth/users/signup', credentials);
-        token.set(response.data.token);
+        // token.set(response.data.token);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -28,7 +29,7 @@ const register = createAsyncThunk<any, void, {}>(
 
 const logIn = createAsyncThunk<any, void, {}>(
     '/auth/users/login',
-    async credentials => {
+    async (credentials:any | IUser) => {
     try {
         const { data } = await axios.post('/auth/users/login', credentials);
         token.set(data.token);
@@ -40,37 +41,19 @@ const logIn = createAsyncThunk<any, void, {}>(
 
 
 
-const logOut = createAsyncThunk<any, void, {}>(
+const logOut = createAsyncThunk(
     'auth/logout',
     async () => {
     try {
-        await axios.post('auth/logout');
         token.unset();
     } catch (error) {
         console.log(error);
     }
 });
 
-// const fetchCurrentUser = createAsyncThunk(
-//     'auth/current',
-//     async (_, thunkAPI) => {
-//         const state = thunkAPI.getState();
-//         const savedToken = state.auth.token;
 
-//         if (savedToken === null) {
-//         return thunkAPI.rejectWithValue();
-//         }
-
-//         token.set(savedToken);
-//         try {
-//         const { data } = await axios.get('auth/current');
-//         return data;
-//         } catch (error) {
-//         console.log(error);
-//         }
-//     },
-// );
-
+export const signup = `https://delivery-backend-project.herokuapp.com/api/auth/users/signup`
+export const signin = `https://delivery-backend-project.herokuapp.com/api/auth/users/login`
 
 
 const operations = {

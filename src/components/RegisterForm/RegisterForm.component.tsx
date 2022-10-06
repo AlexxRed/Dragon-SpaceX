@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { Formik, FormikHelpers } from 'formik';
-
 import { Box, CreateTodo, FormTitle, FormButton } from './RegisterForm.styled';
 import InputField from '../InputField/InputField.component';
 import registerValidation from '../../services/consts/validation/registerValidation';
@@ -26,10 +25,10 @@ const RegisterFormComponent: FC<IProps> = ({ data, onSave, title }) => {
                 onSubmit={handleSubmit}
                 validationSchema={registerValidation}>
             <CreateTodo autoComplete="off">
-            <InputField name="username" title="Username" type="text" />
+            <InputField name="name" title="Name" type="text" />
             <InputField name="email" title="Email" type="text" />
-            <InputField name="password" title="Password" type="password" />
-            <InputField name="repeat_password" title="Verify Password" type="password" />
+            <InputField name="password" title="Password" type="password"  />
+            <InputField name="repeat_password" title="Verify Password" type="password"  />
             <FormButton type="submit">Register</FormButton>
             </CreateTodo>
         </Formik>
