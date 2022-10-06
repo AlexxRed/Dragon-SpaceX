@@ -3,7 +3,7 @@ import { Formik, FormikHelpers } from 'formik';
 
 import { Box, CreateTodo, FormTitle, FormButton } from './RegisterForm.styled';
 import InputField from '../InputField/InputField.component';
-import loginValidation from '../../services/consts/validation/loginValidation';
+import registerValidation from '../../services/consts/validation/registerValidation';
 import { IUser } from '../../services/types/user.types';
 
 interface IProps {
@@ -21,15 +21,16 @@ const RegisterFormComponent: FC<IProps> = ({ data, onSave, title }) => {
     return (
         <Box>
         <FormTitle>{title}</FormTitle>
-
-            <Formik
+        <Formik
                 initialValues={data}
                 onSubmit={handleSubmit}
-                validationSchema={loginValidation}>
+                validationSchema={registerValidation}>
             <CreateTodo autoComplete="off">
-            <InputField name="login" title="Username/Email" type="text" />
+            <InputField name="username" title="Username" type="text" />
+            <InputField name="email" title="Email" type="text" />
             <InputField name="password" title="Password" type="password" />
-            <FormButton type="submit">Login</FormButton>
+            <InputField name="repeat_password" title="Verify Password" type="password" />
+            <FormButton type="submit">Register</FormButton>
             </CreateTodo>
         </Formik>
         </Box>

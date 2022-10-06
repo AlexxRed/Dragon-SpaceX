@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 const registerValidation = yup.object({
-  username: yup
+  name: yup
     .string()
     .min(1, 'Min value 2.')
     .max(50, 'Max value 100.')

@@ -1,8 +1,17 @@
 import * as yup from 'yup';
 
 const loginValidation = yup.object({
-  login: yup.string().min(3, 'Min value 3.').max(30, 'Max value 100.'),
-  password: yup.string().required('Password is required')
+  email: yup
+    .string()
+    .min(5)
+    .max(100)
+    .email('Enter a valid email')
+    .required('Email is required'),
+  password: yup
+    .string()
+    .required('Password is required')
+    .min(8, 'Password should be of minimum 8 characters length')
 });
 
 export default loginValidation;
+
