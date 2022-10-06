@@ -13,7 +13,7 @@ const token = {
     },
 };
 
-const register = createAsyncThunk<any, void, {}>(
+const register = createAsyncThunk<IUser>(
     '/auth/users/signup',
     async credentials => {
     try {
@@ -27,9 +27,9 @@ const register = createAsyncThunk<any, void, {}>(
 
 
 
-const logIn = createAsyncThunk<any, void, {}>(
+const logIn = createAsyncThunk<IUser>(
     '/auth/users/login',
-    async (credentials:any | IUser) => {
+    async (credentials, { rejectWithValue })=> {
     try {
         const { data } = await axios.post('/auth/users/login', credentials);
         token.set(data.token);
