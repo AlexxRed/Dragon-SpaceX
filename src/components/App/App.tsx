@@ -3,6 +3,8 @@ import { lazy, Suspense } from "react";
 import { refs } from "../../services/consts/refs";
 import Layout from "../Layout/Layout";
 import { Loader } from "../Loader/Loader";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import PublicRoute from "../PublicRoute/PublicRoute"
 
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage" /* webpackChunkName: "home-page" */));
@@ -19,10 +21,26 @@ function App() {
       <Suspense fallback={<>{<Loader/>}</>}>
         <Routes>
           <Route path={refs.layout} element={<Layout />} >
-            <Route index element={<HomePage />} />
-            <Route path={refs.dragons} element={<DragonsPage />} />
-            <Route path={refs.login} element={<LoginPage />} />
-            <Route path={refs.register} element={<RegisterPage />} />
+            <Route index element={
+              <PrivateRoute>
+                <HomePage />
+              </PrivateRoute>
+            } />
+            <Route path={refs.dragons} element={
+              <PrivateRoute>
+                <DragonsPage />
+              </PrivateRoute>
+              } />
+            <Route path={refs.login} element={
+              <PublicRoute>
+                <LoginPage />
+              </PublicRoute>
+            } />
+            <Route path={refs.register} element={
+              <PublicRoute>
+                <RegisterPage />
+              </PublicRoute>
+            } />
             <Route path={refs.notFoundPage} element={<NotFoundPage />} />
           </Route>
           </Routes>
