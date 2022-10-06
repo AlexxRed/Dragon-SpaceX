@@ -70,10 +70,9 @@ export const Header = styled.header`
     align-items: center;
     min-height: 80px;
     margin-bottom: 0px;
-    background-color: #2b2e2bef;
+    background-color: #2b2e2eee;
     border-bottom: 1px solid #0a415a;
     box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px -1px, rgb(0 0 0 / 14%) 0px 4px 5px 0px, rgb(0 0 0 / 12%) 0px 1px 10px 0px;
-    /* display: flex; */
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
@@ -94,11 +93,13 @@ export const Navigation = styled.nav`
 export const Box = styled.div`
     display: flex;
     justify-content: center;
-    margin-right: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
 `;
 
 
 export const LogoText = styled.p`
+    text-decoration: none;
     display:flex;
     align-items: center;
     justify-content:center;
