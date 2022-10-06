@@ -2,7 +2,7 @@ export const refs = {
     layout: '/',
     home: '/',
     dragons: 'dragons',
-    register: 'register',
-    login: 'login',
+    register: '/register',
+    login: '/login',
     notFoundPage: '*',
 };
