@@ -8,12 +8,14 @@ import {
     PURGE,
     REGISTER,
 } from 'redux-persist';
+import { authReducer } from './auth/authSlice';
 import { dragonsReducer } from './dragonSlice';
 
 
 export const store = configureStore({
     reducer: {
         dragons: dragonsReducer,
+        auth: authReducer
     },
     middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(
         {
