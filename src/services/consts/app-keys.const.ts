@@ -8,20 +8,16 @@ export const STORAGE_KEYS = {
 
 // React-query keys
 export const QUERY_KEYS = {
-  TODOS: 'todos',
+  DRAGONS: 'dragons',
   AUTH: 'user',
   LOGIN: 'login',
   REGISTER: 'register',
-  OWNTODOS: 'own'
 };
 
 export const ROUTER_KEYS = {
   ROOT: '/',
   HOME: '/home',
-  CREATE_TODO: '/createtodo',
-  UPDATE_TODO: '/:id',
   AUTHORIZED: 'authorized',
   REGISTER: '/auth/register',
   LOGIN: '/auth/login',
-  OWN: '/own'
 };

@@ -1,6 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { IDragon } from '../services/types/dragon.types';
 import { fetchAllDragons, getOneDragon} from './dragonsOperations'
 
 
@@ -16,10 +17,7 @@ export const dragonsSlice = createSlice({
     name: 'dragons',
     initialState,
     reducers: {
-        firstActiveDragon(state: IState, action){
-            state.activeDragon = action.payload
-        },
-        setActiveDragon(state: IState, action) {
+        setActiveDragon(state: IState, action: PayloadAction<string>) {
             state.activeDragon = state.items.find((item: any) => item.id === action.payload);
         },
         setGallery(state: IState) {
@@ -28,7 +26,7 @@ export const dragonsSlice = createSlice({
         }
     },
     extraReducers: {
-        [fetchAllDragons.fulfilled.type]: (state: IState, action: any) => {
+        [fetchAllDragons.fulfilled.type]: (state: IState, action: PayloadAction) => {
             state.items = action.payload;
             state.isLoading = false;
             state.error = null;
@@ -37,11 +35,11 @@ export const dragonsSlice = createSlice({
             state.isLoading = true;
             state.error = null;
         },
-        [fetchAllDragons.rejected.type]: (state: IState, action: any) => {
+        [fetchAllDragons.rejected.type]: (state: IState, action: PayloadAction) => {
             state.isLoading = false;
             state.error = action.payload;
         },
-        [getOneDragon.fulfilled.type]: (state: IState, action: any) => {
+        [getOneDragon.fulfilled.type]: (state: IState, action: PayloadAction) => {
             state.activeDragon = action.payload;
             state.isLoading = false;
             state.error = null;
@@ -50,7 +48,7 @@ export const dragonsSlice = createSlice({
             state.isLoading = true;
             state.error = null;
         },
-        [getOneDragon.rejected.type]: (state: IState, action: any) => {
+        [getOneDragon.rejected.type]: (state: IState, action: PayloadAction) => {
             state.isLoading = false;
             state.error = action.payload;
         },
@@ -67,11 +65,11 @@ export const dragonsReducer = persistReducer(
 );
 
 interface IState {
-    items: any;
-    activeDragon: any|undefined|null;
-    isLoading: any;
+    items: IDragon[]| any;
+    activeDragon: IDragon| any|undefined|null;
+    isLoading: boolean;
     error: any;
-    gallery: any | [string];
+    gallery: [string]| any;
 }
 
 export const { setGallery } = dragonsSlice.actions;

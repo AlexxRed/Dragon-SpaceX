@@ -94,6 +94,7 @@ export const Navigation = styled.nav`
 export const Box = styled.div`
     display: flex;
     justify-content: center;
+    margin-right: 15px;
 `;
 
 

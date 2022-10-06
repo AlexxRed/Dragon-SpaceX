@@ -1,28 +1,25 @@
 import styled from '@emotion/styled';
+const login =  require("../../images/space-4984262_1920.jpg")
 
 export const Box = styled.div`
     box-sizing: border-box;
     height: 100vh;
-    padding-top: 20px;
     margin: 0px;
     flex-direction: row;
+    background-image: url(${login});
     background-repeat: no-repeat;
+    background-color: rgb(250, 250, 250);
     background-size: cover;
-    background-position: center ;
+    background-position: center center;
 `;
 
-export const Text = styled.h4`
+export const Text = styled.h3`
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top:auto;
-    margin-bottom: auto;
-    max-width: 800px;
     font-size: 40px;
     font-weight: 900;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 50px;
-    color: #23252385;
+    margin-top: auto;
+    color: #0077ff;
 `;

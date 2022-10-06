@@ -1,8 +1,8 @@
-import { Triangle } from 'react-loader-spinner';
+import { Grid } from 'react-loader-spinner';
 
 export const Loader = () => {
     return (
-        <Triangle
+        <Grid
             color="#088085"
             height={80}
             width={80}
