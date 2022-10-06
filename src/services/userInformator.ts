@@ -22,8 +22,5 @@ export function infoStyle() {
     fontFamily: 'Quicksand',
     fontSize: '16px',
     cssAnimationStyle: 'zoom',
-    cssAnimationDuration: '500',
-    useIcon: 'false',
-    messageColor: '#99ff01',
 });
 };
