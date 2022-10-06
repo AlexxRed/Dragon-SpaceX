@@ -5,7 +5,8 @@ const login =  require("../../images/space-4984262_1920.jpg")
 export const Box = styled.div`
     box-sizing: border-box;
     height: 100vh;
-    margin: 120px auto;
+    margin: 0px auto 0px auto;
+    padding-top: 150px;
     flex-direction: row;
     background-image: url(${login});
     background-repeat: no-repeat;

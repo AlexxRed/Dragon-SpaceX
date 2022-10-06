@@ -3,11 +3,11 @@ import LoginFormComponent from '../../components/LoginForm/LoginForm.component'
 import { useNavigate } from 'react-router-dom';
 import { refs } from '../../services/consts/refs';
 import { IUser } from '../../services/types/user.types';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 // import operations from '../../redux/auth/authOperations';
 
 export default function LoginPage() {
-    const dispatch = useDispatch<any>()
+    // const dispatch = useDispatch<any>()
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -29,7 +29,7 @@ export default function LoginPage() {
         <Box>
             <Shadow>
                 <LoginFormComponent data={data} onSave={onSave} title="Login" />
-                <Text>Already have account?</Text>
+                <Text>Don`t have an account?</Text>
                 <Button onClick={handleClick}><Text>Registration</Text></Button>
             </Shadow>
         </Box>
