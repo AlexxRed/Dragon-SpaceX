@@ -46,4 +46,3 @@ export const authReducer = persistReducer(
 );
 
 
-// export default authSlice.reducer;
