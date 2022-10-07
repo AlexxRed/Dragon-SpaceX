@@ -10,11 +10,22 @@ export function AppBar() {
         <Header>
             <Navigation>
                 <Box>
-                    <NavLink to={refs.home}><Logo></Logo><LogoText>Dragon</LogoText></NavLink>
+                    <NavLink to={refs.home}>
+                        <Logo></Logo>
+                        <LogoText>Dragon</LogoText>
+                    </NavLink>
                 </Box>
-                <Box><Text>SpaceX <Link to={refs.dragons}><StatisticLogo></StatisticLogo> </Link>Dragons</Text></Box>
                 <Box>
-                    <Link to={refs.dragons}><ArchiveLogo></ArchiveLogo><LogoText>Dragons</LogoText></Link>
+                    <Text>SpaceX
+                        <Link to={refs.dragons}>
+                            <StatisticLogo></StatisticLogo>
+                        </Link>Dragons</Text>
+                </Box>
+                <Box>
+                    <Link to={refs.dragons}>
+                        <ArchiveLogo></ArchiveLogo>
+                        <LogoText>Dragons</LogoText>
+                    </Link>
                 </Box>
             </Navigation>
         </Header>
