@@ -6,9 +6,12 @@ import { IUser } from '../../services/types/user.types';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 import { signin } from '../../redux/auth/authOperations';
+import { useState } from 'react';
+import { Loader } from '../../components/Loader/Loader';
 
 
 export default function LoginPage() {
+    const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -21,7 +24,7 @@ export default function LoginPage() {
     };
 
     const onSave = async (values: IUser): Promise<void> => {
-        // console.log(values)
+        setIsLoading(true)
         const data: IUser = {
             email: values.email,
             password: values.password
@@ -29,19 +32,21 @@ export default function LoginPage() {
             try {
             const result = await axios.post(signin, data)
                 if (result.status === 200) {
-                    // console.log(result.data.token)
+                    setIsLoading(false)
                     localStorage.setItem('token', result.data.token)
                     Notify.info('Welcome');
                     navigate(refs.home, { replace: false });
                 }
-        } catch (error) {
-            
-        }
+            } catch (error) {
+                setIsLoading(false)
+                Notify.info(`Something went wrong please try again ${error}`);
+            }
     };
     
 
     return (
         <Box>
+            {isLoading && <Loader/>}
             <Shadow>
                 <LoginFormComponent data={data} onSave={onSave} title="Login" />
                 <Text>Don`t have an account?</Text>

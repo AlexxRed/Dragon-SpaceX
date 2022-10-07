@@ -82,6 +82,9 @@ export const Header = styled.header`
     top: 0px;
     left: auto;
     right: 0px;
+        @media (min-width: 780px) and (max-width: 1200px) {
+        justify-content: center;
+    }
 `;
 export const Navigation = styled.nav`
     display: flex;
@@ -97,6 +100,15 @@ export const Box = styled.div`
     margin-right: 50px;
 `;
 
+export const CenterBox = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+            @media (max-width: 780px) {
+        display: none;
+    }
+`;
 
 export const LogoText = styled.p`
     text-decoration: none;

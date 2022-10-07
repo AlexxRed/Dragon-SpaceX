@@ -1,4 +1,4 @@
-import { Header, Navigation, Box, Logo, ArchiveLogo, LogoText, StatisticLogo } from './AppBar.styled';//Logo,LogoIcon 
+import { Header, Navigation, Box, Logo, ArchiveLogo, LogoText, StatisticLogo, CenterBox } from './AppBar.styled';//Logo,LogoIcon 
 import { Link, NavLink } from 'react-router-dom';
 import { refs } from "../../services/consts/refs";
 import { Text } from '../../pages/LoginPage/LoginPage.styled';
@@ -15,12 +15,12 @@ export function AppBar() {
                         <LogoText>Dragon</LogoText>
                     </NavLink>
                 </Box>
-                <Box>
+                <CenterBox>
                     <Text>SpaceX
                         <Link to={refs.dragons}>
                             <StatisticLogo></StatisticLogo>
                         </Link>Dragons</Text>
-                </Box>
+                </CenterBox>
                 <Box>
                     <Link to={refs.dragons}>
                         <ArchiveLogo></ArchiveLogo>

@@ -4,7 +4,7 @@ import {  getDragons, getGallery, setActiveDragon, setGallery } from '../../redu
 import { fetchAllDragons } from '../../redux/dragonsOperations';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Box, Text, Wrapper, DragonList, ImageWrapper } from './DragonsPage.styled';
+import { Box, Text, DragonList, ImageWrapper, GalleryWrapper, GalleryText, ItemWrapper } from './DragonsPage.styled';
 import { useNavigate } from "react-router-dom";
 import { refs } from "../../services/consts/refs";
 
@@ -21,7 +21,6 @@ function DragonsPage() {
         if (gallery.length === 0) {
             dispatch(setGallery());
         }
-        console.log(gallery)
     }, [dispatch, gallery]);
     
     const onImage = (id:string) => {
@@ -36,27 +35,27 @@ function DragonsPage() {
                 {allDragons.map((item: any) =>
                     <div key={item.id}>
                         <Text>{item.name}</Text>
-                        <Wrapper id={item.id} onClick={() => onImage(item.id)}>
+                        <ItemWrapper id={item.id} onClick={() => onImage(item.id)}>
                             {item.flickr_images.map((item: string) => 
                                 <ImageWrapper key={item}>
-                                    <img  src={item} alt="" height={200}/>
+                                    <img  src={item} alt="" height={150}/>
                                 </ImageWrapper>
                                 )}
-                        </Wrapper>
+                        </ItemWrapper>
                     </div>
                 )}
             </DragonList>
-            <Text>Gallery</Text>
+            <GalleryText>Gallery</GalleryText>
             {gallery && 
-            <Wrapper>
-                <Carousel  autoPlay={true} dynamicHeight={true} showArrows={true} infiniteLoop={true} width={1300} >
+            <GalleryWrapper>
+                <Carousel  autoPlay={true} dynamicHeight={true} showArrows={true} infiniteLoop={true} width={1000} >
                     {gallery.map((item: undefined| any) => (
                         <div key={item}>
                             <img key={item} src={item} alt="" />
                         </div>
                     ))}
                 </Carousel>
-            </Wrapper>
+            </GalleryWrapper>
             }
 
         </Box>

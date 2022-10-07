@@ -7,10 +7,13 @@ import axios from 'axios';
 import { signup } from '../../redux/auth/authOperations';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { infoStyle } from "../../services/userInformator";
+import { Loader } from '../../components/Loader/Loader';
+import { useState } from 'react';
 infoStyle()
 
 export default function RegisterPage() {
     const navigate = useNavigate();
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleClick = () => {
         navigate(refs.login, { replace: false });
@@ -25,6 +28,7 @@ export default function RegisterPage() {
     };
 
     const onSave = async (values: IUser) => {
+        setIsLoading(true)
         const data: IUser = 
         {
             name: values.name,
@@ -36,11 +40,13 @@ export default function RegisterPage() {
             const result = await axios.post(signup, data)
             // console.log(result.status)
             if (result.status === 201) {
+                setIsLoading(false)
                 Notify.info('You have successfully registered! Enter your email and password!');
                 navigate(refs.login, { replace: false });
             }
         } catch (error) {
-            
+            setIsLoading(false)
+            Notify.info(`Something went wrong please try again ${error}`);
         }
 
         
@@ -48,6 +54,7 @@ export default function RegisterPage() {
     
     return (
         <Box>
+            {isLoading && <Loader/>}
             <Shadow>
                 <RegisterFormComponent data={initialData!} onSave={onSave} title="Register" />
                 <Text>Already have account?</Text>

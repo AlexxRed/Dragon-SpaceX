@@ -12,6 +12,9 @@ export const Box = styled.div`
   padding: ${SPACES.m};
   margin-left: auto;
   margin-right: auto;
+      @media (min-width: 320px) and (max-width: 780px) {
+    width: 310px;
+  }
 `;
 
 export const FormTitle = styled.h1`
@@ -21,6 +24,9 @@ export const FormTitle = styled.h1`
   justify-content: center;
   align-items: center;
   margin-top: auto;
+    @media (min-width: 320px) and (max-width: 780px) {
+    width: 300px;
+  }
 `;
 
 export const CreateTodo = styled(Form)`
@@ -29,8 +35,8 @@ export const CreateTodo = styled(Form)`
   @media (min-width: 1201px) and (max-width: 2000px) {
     width: 450px;
   }
-  @media (min-width: 780px) and (max-width: 1200px) {
-    width: 400px;
+  @media (min-width: 320px) and (max-width: 780px) {
+    width: 300px;
   }
 `;
 
@@ -51,11 +57,8 @@ export const FormButton = styled.button`
   &:focus {
     background-color: ${COLORS.secondary};
   }
-  min-width: 320px;
-  @media (max-width: 2000px) {
-    font-size: ${FONTS.SIZES.l};
-  }
-  @media (max-width: 900px) {
-    width: 100%;
+  min-width: 280px;
+    @media (min-width: 320px) and (max-width: 780px) {
+    width: 200px;
   }
 `;

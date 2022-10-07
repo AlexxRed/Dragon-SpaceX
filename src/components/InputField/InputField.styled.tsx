@@ -9,6 +9,11 @@ export const Box = styled.div`
 export const LableForm = styled.label`
   display: flex;
   flex-direction: column;
+      @media (min-width: 320px) and (max-width: 780px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+  }
 `;
 
 export const InputForm = styled(Field)`
@@ -22,6 +27,11 @@ export const InputForm = styled(Field)`
   &:hover,
   &:focus {
     background-color: ${COLORS.secondary};
+  }
+        @media (min-width: 320px) and (max-width: 780px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
   }
 `;
 

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getActiveDragon, getDragons } from '../../redux/dragonSlice';
+import { getActiveDragon} from '../../redux/dragonSlice';
 import { fetchAllDragons, getOneDragon } from '../../redux/dragonsOperations';
-import { Box, Shadow, Text, Wrapper } from './HomePage.styled'
+import { Box, Shadow, Text, WikiLink, WikiText, Wrapper } from './HomePage.styled'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
@@ -12,7 +12,6 @@ import { Carousel } from 'react-responsive-carousel';
 function HomePage() {
     const dispatch = useDispatch<any>()
     const dragon = useSelector(getActiveDragon)
-    const allDragons = useSelector(getDragons)
 
     useEffect(() => {
         if (!dragon) {
@@ -23,16 +22,13 @@ function HomePage() {
     useEffect(() => {
     dispatch(fetchAllDragons());
     }, [dispatch]);
-    
-    console.log(dragon)
-    console.log(allDragons)
 
     return (
         <Box>
             {dragon &&
                 <>
                 <Wrapper>
-                <Carousel autoPlay={true} dynamicHeight={true} showArrows={true} infiniteLoop={true} width={800} >
+                <Carousel autoPlay={true} dynamicHeight={true} showArrows={true} infiniteLoop={true} >
                     {dragon.flickr_images.map((item: string) => (
                         <div key={item}>
                             <img key={item} src={item} alt="" />
@@ -48,9 +44,9 @@ function HomePage() {
                     <Text>launch payload mass: {dragon.launch_payload_mass.kg} kg</Text>
                     <Text>height with trunk: {dragon.height_w_trunk.meters} meters</Text>
                     <Text>{dragon.description}</Text>
-                    <Text>wikipedia:  
-                        <a href={dragon.wikipedia}> { dragon.wikipedia}</a>
-                    </Text>
+                    <WikiText>wikipedia:  
+                        <WikiLink href={dragon.wikipedia}> { dragon.wikipedia}</WikiLink>
+                    </WikiText>
                 </Shadow>
 
             </>}

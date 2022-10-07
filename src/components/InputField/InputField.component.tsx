@@ -18,7 +18,7 @@ const InputField = ({ name, title, type, placeholder }: IInput) => {
         {title ?? name}
         {type === 'text' && <InputForm name={name} placeholder={placeholder} />}
         {type === 'input' && <InputForm name={name} placeholder={placeholder} />}
-        {type === 'password' && <InputForm name={name} placeholder={placeholder} type={type}  autocomplete="on"/>}
+        {type === 'password' && <InputForm name={name} placeholder={placeholder} type={type}  autoComplete="on"/>}
         {type === 'checkbox' && <InputForm style={{ height: 20 }} name={name} type={type} />}
         {type === 'textarea' && (
           <InputForm name={name} placeholder={placeholder} rows="5" component={type} />
