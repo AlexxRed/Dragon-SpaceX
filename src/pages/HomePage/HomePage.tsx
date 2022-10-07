@@ -5,7 +5,7 @@ import { fetchAllDragons, getOneDragon } from '../../redux/dragonsOperations';
 import { Box, Shadow, Text, Wrapper } from './HomePage.styled'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Loader } from '../../components/Loader/Loader';
+
 
 
 
@@ -29,7 +29,6 @@ function HomePage() {
 
     return (
         <Box>
-            <Loader/>
             {dragon &&
                 <>
                 <Wrapper>
